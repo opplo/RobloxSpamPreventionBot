@@ -53,7 +53,7 @@ https://github.com/mozilla/geckodriver/releases
 
 To run the script in cmd simply run the .py file with the python command.  
 ```
-python (path to .py file)*
+python (path to .py file)
 ```
 
 ## Additional
