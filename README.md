@@ -25,7 +25,7 @@ There are three requirements to run the code.
 
 ### 1: Python
 
-Get the latest release here:
+Get the latest release here:  
 https://www.python.org/downloads/windows/
 
 ### 2: Selenium Python Bindings
@@ -34,17 +34,17 @@ If you have pip the following line will work in cmd:
 *pip install selenium*
 pip should be included with your install of Python
 
-I recommend following 1.2 of this guide if you don't know what to do:
+I recommend following 1.2 of this guide if you don't know what to do:  
 http://selenium-python.readthedocs.io/installation.html
 
 ### 3: Chrome Driver (Chrome) / Gecko Driver (Firefox)
 
 Download and extract the appropiate driver
 
-Chrome:
+Chrome:  
 https://sites.google.com/a/chromium.org/chromedriver/downloads
 
-Firefox:
+Firefox:  
 https://github.com/mozilla/geckodriver/releases
 
 ## Additional
