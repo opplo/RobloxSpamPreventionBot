@@ -31,9 +31,9 @@ https://www.python.org/downloads/windows/
 ### 2: Selenium Python Bindings
 
 If you have pip the following line will work in cmd:  
-'''
+```
 pip install selenium
-'''  
+```  
 pip should be included with your install of Python
 
 I recommend following 1.2 of this guide if you don't know what to do:  
@@ -52,9 +52,9 @@ https://github.com/mozilla/geckodriver/releases
 ## Running
 
 To run the script in cmd simply run the .py file with the python command.  
-'''
+```
 python (path to .py file)*
-'''
+```
 
 ## Additional
 
