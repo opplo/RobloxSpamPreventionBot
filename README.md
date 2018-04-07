@@ -47,6 +47,11 @@ https://sites.google.com/a/chromium.org/chromedriver/downloads
 Firefox:  
 https://github.com/mozilla/geckodriver/releases
 
+## Running
+
+To run the script in cmd simply run the .py file with the python command.
+*python (path to .py file)*
+
 ## Additional
 
 Contact opplo if you have any questions.
