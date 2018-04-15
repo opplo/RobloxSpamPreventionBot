@@ -6,7 +6,7 @@ Designed to combat the growing number of Roblox bot accounts spamming on group w
 The only way to encourage your community to post on the group wall and keep them safe without lots of 
 manual moderation is to use a bot to fight back.
 
-This is **not** designed to be user friendly, just a quick solution.
+This is **not** designed to be user friendly, just a quick solution.  
 None of the data scraped from the Roblox website is stored, it is simply read and forgotten.
 
 Change the group page link and your Chrome/Gecko driver location in the source code.
