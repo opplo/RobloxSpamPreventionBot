@@ -8,10 +8,10 @@ manual moderation is to use a bot to fight back.
 
 None of the data scraped from the Roblox website is stored, it is simply read and forgotten.
 
+Change the group page link and your Chrome/Gecko driver location in the source code.
+
 The creator is not responsible for anything that goes wrong. Use at your own risk, edit at your own risk.  
 I recommend using a throw away account, creating a bot role within your group with only delete permissions
-
-DO NOT SHARE THIS FILE WITH ANYONE WHILE IT CONTAINS YOUR BOT'S PASSWORD
 
 Supports both chrome or firefox, look at source code.
 
