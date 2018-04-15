@@ -20,16 +20,18 @@ from selenium.webdriver.chrome.options import Options
 import time 
 import datetime
 import os
+import getpass # Invisible password input
 
 # Details
-username = ""
-password = ""
+username = input("Account username:")
+password = getpass.getpass("Password (hidden):")
+
 group_page = "https://www.roblox.com/groups/group.aspx?gid=997074"
 driver_location = "D:\DocumentsHDD\chromedriverfolder\chromedriver.exe"
 wait_time = 300
 
 # Unwanted words
-blacklist = ["ROBUX", "WIN", "FREE", "FOLLOWERS", "PROFILE", "LOOK", "DONATE", "MORE FOLLOWERS"]
+blacklist = ["ROBUX", "WIN", "FREE", "FOLLOWERS", "PROFILE", "LOOK", "DONATE", "MORE FOLLOWERS", "PRIZE"]
 
 # Run firefox headless 
 #options = Options()
@@ -45,17 +47,20 @@ driver = webdriver.Chrome(driver_location, chrome_options=options)
 
 # Load login page
 print("Loading page")
-driver.get("https://www.roblox.com")
+driver.get("https://www.roblox.com/login")
 print("Page loaded")
 
 # Login
 print("Logging in")
-username_element = driver.find_element_by_id("LoginUsername")
-password_element = driver.find_element_by_id("LoginPassword")
+username_element = driver.find_element_by_id("login-username")
+password_element = driver.find_element_by_id("login-password")
 username_element.send_keys(username)
 password_element.send_keys(password)
-driver.find_element_by_name("submitLogin").click()
-print("Logged in")
+time.sleep(1)
+driver.find_element_by_id("login-button").click()
+print("Logging in, please wait.")
+# Page load
+time.sleep(5)
 
 # Begin searching
 print("Starting search loop")
