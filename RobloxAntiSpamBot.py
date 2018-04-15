@@ -8,8 +8,6 @@
 	The creator is not responsible for anything that goes wrong. Use at your own risk, edit at your own risk.
 	I recommend using a throw away account, creating a bot role within your group with only delete permissions
 	
-	DO NOT SHARE THIS FILE WITH ANYONE WHILE IT CONTAINS YOUR BOT'S PASSWORD
-	
 	Supports both chrome or firefox, look at source code.
 '''
 
