@@ -5,6 +5,8 @@
 	
 	None of the data scraped from the Roblox website is stored, it is simply read and forgotten.
 
+	Change the group page link and your driver location.
+
 	The creator is not responsible for anything that goes wrong. Use at your own risk, edit at your own risk.
 	I recommend using a throw away account, creating a bot role within your group with only delete permissions
 	
@@ -20,10 +22,11 @@ import datetime
 import os
 import getpass # Invisible password input
 
-# Details
+
 username = input("Account username:")
 password = getpass.getpass("Password (hidden):")
 
+# Change these details!
 group_page = "https://www.roblox.com/groups/group.aspx?gid=997074"
 driver_location = "D:\DocumentsHDD\chromedriverfolder\chromedriver.exe"
 wait_time = 300
