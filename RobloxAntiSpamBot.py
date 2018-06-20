@@ -5,10 +5,10 @@
 	
 	None of the data scraped from the Roblox website is stored, it is simply read and forgotten.
 
-	Change the group page link and your driver location.
-
 	The creator is not responsible for anything that goes wrong. Use at your own risk, edit at your own risk.
 	I recommend using a throw away account, creating a bot role within your group with only delete permissions
+	
+	DO NOT SHARE THIS FILE WITH ANYONE WHILE IT CONTAINS YOUR BOT'S PASSWORD
 	
 	Supports both chrome or firefox, look at source code.
 '''
@@ -22,17 +22,16 @@ import datetime
 import os
 import getpass # Invisible password input
 
-
+# Details
 username = input("Account username:")
 password = getpass.getpass("Password (hidden):")
 
-# Change these details!
 group_page = "https://www.roblox.com/groups/group.aspx?gid=997074"
 driver_location = "D:\DocumentsHDD\chromedriverfolder\chromedriver.exe"
-wait_time = 300
+wait_time = 10
 
 # Unwanted words
-blacklist = ["ROBUX", "WIN", "FREE", "FOLLOWERS", "PROFILE", "LOOK", "DONATE", "MORE FOLLOWERS", "PRIZE"]
+blacklist = ["ROBUX", "WIN", "FREE", "FOLLOWERS", "PROFILE", "LOOK", "DONATE", "MORE FOLLOWERS", "PRIZE", "R$", ".COM", ".ME"]
 
 # Run firefox headless 
 #options = Options()
@@ -69,36 +68,27 @@ while True:
 	# Webpage to crawl
 	driver.get(group_page)
 	
-	# Find elements
-	elem = driver.find_elements_by_class_name("AlternatingItemTemplateEven")
-	elem.extend(driver.find_elements_by_class_name("AlternatingItemTemplateOdd"))
+	# Find element
+	try:
+		elem = driver.find_element_by_class_name("AlternatingItemTemplateOdd")
+	except:
+		print("Couldn't find element")
+		time.sleep(wait_time)
+		continue
 	
-	elements_to_delete = [] 
-	
-	# Loop through all group wall posts
-	for i in elem:
-		num_of_words = 0
-		message = i.find_element_by_class_name("GroupWall_PostContainer").text.upper()
-		for word in blacklist:
+	num_of_words = 0
+	message = elem.find_element_by_class_name("GroupWall_PostContainer").text.upper()
+	for word in blacklist:
 			if word in message:
 				num_of_words += 1
-		
-		# If the post contains two or more blacklisted words then delete post
-		if num_of_words >= 2:
-			print(message)
-			try:
-				elements_to_delete.append(i.find_element_by_class_name("GroupWall_PostBtns").find_element_by_tag_name("a"))
-			except:
-				print("Coudn't find delete button. User may be of a higher permission than bot / username & password may be wrong")
 	
-	# Delete all chosen posts
-	for element in elements_to_delete:
-		print("Deleting")
+	# If the post contains two or more blacklisted words then delete post
+	if num_of_words >= 2:
+		print(message)
 		try:
-			element.click()
+			elem.find_element_by_class_name("GroupWall_PostBtns").find_element_by_tag_name("a").click()
 		except:
-			print("Issue clicking delete button")
-	
+			print("Coudn't find delete button. User may be of a higher permission than bot / username & password may be wrong")
 	
 	print(str(datetime.datetime.now()))
 	time.sleep(wait_time)
